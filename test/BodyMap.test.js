@@ -20,5 +20,19 @@ describe('BodyMap',() =>
         assert.ok(deployedBodyMapContract.options.address);
         console.log(deployedBodyMapContract.options.address);
     })
+    it('changes bodyMaps',async()=>{
+        await deployedBodyMapContract.methods.setBodyMaps(clearTextPassword,"new basic body map","new tailor body map").send({from:accounts[0],gas:5000000});
+        const updatedBasicBodyMap = await deployedBodyMapContract.methods.basicBodyMap().call();
+        const updatedTailorBodyMap = await deployedBodyMapContract.methods.tailorBodyMap().call();
+        assert.equal(updatedBasicBodyMap,"new basic body map");
+        assert.equal(updatedTailorBodyMap,"new tailor body map");
+    })
+    it('can not change body map with wrong password',async()=>{
+        await deployedBodyMapContract.methods.setBodyMaps("wrong password!","new basic body map","new tailor body map").send({from:accounts[0],gas:5000000});
+        const updatedBasicBodyMap = await deployedBodyMapContract.methods.basicBodyMap().call();
+        const updatedTailorBodyMap = await deployedBodyMapContract.methods.tailorBodyMap().call();
+        assert.notEqual(updatedBasicBodyMap,"new basic body map");
+        assert.notEqual(updatedTailorBodyMap,"new tailor body map");
+    })
 
 })
