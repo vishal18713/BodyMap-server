@@ -1,6 +1,6 @@
 pragma solidity ^0.8.19;
 
-contract BodyMap{
+contract bodyMap{
     bytes32 private passwordHash;
     string public basicBodyMap;
     string public tailorBodyMap;
