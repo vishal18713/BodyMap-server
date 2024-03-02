@@ -19,7 +19,7 @@ var input =
 
 const compiledContracts = JSON.parse(solc.compile(JSON.stringify(input)));
 console.log(compiledContracts);
-const compiledContract =compiledContracts.contracts[contractToCompileName]["BodyMap"];
+const compiledContract =compiledContracts.contracts[contractToCompileName]["bodyMap"];
 console.log(compiledContract);
 module.exports = {compiledContract};
 //this is for exporting the compiled contract to use it in the other files
