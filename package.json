@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vishal18713/BodyMap-server.git"
+    "url": "git+https://github.com/vishal18713/BodyMap.git"
   },
   "author": "Vishal 300",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vishal18713/BodyMap-server/issues"
+    "url": "https://github.com/vishal18713/BodyMap/issues"
   },
-  "homepage": "https://github.com/vishal18713/BodyMap-server#readme",
+  "homepage": "https://github.com/vishal18713/BodyMap#readme",
   "dependencies": {
     "express": "^4.18.2",
     "ganache-cli": "^6.12.2",
